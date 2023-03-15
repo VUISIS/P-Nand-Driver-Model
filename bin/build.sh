@@ -2,4 +2,8 @@
 
 ROOTDIR=`dirname "$0"`/..
 cd $ROOTDIR
-pc -proj:nand.pproj
+if [$(type pc)]; then
+  pc -proj:Nand.pproj
+else
+  p compile -pp Nand.pproj
+fi
